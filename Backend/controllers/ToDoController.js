@@ -99,7 +99,7 @@ module.exports.loginUser=   asynchandler(async(req,res)=>{
     
     const loggedInUser=await Main.findById(user._id).select("-password  -refreshToken")/// jo cheez huma nhi chaa usee mana kr do 
     
-    
+    console.log(user._id);
     
     // by using below one anyone can modify the cokkies in frontend,but by httponly true and secure : true ya kvl server sa modify hongi
     const options={
@@ -108,7 +108,8 @@ module.exports.loginUser=   asynchandler(async(req,res)=>{
     }
     // console.log(loggedInUser);
     console.log("User loggen in sucessfully");
-    
+    console.log(accessToken);
+    console.log(refreshToken);
      res.status(200)
     .cookie("accessToken",accessToken,options)
     .cookie("refreshToken",refreshToken,options)

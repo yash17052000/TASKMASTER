@@ -14,14 +14,15 @@ module.exports.verifyJWT = asynchandler(async(req, _, next) => {
         }
     
         const decodedToken = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET)
-   
+        console.log(decodedToken);
         const user = await Main.findById(decodedToken?._id).select("-password -refreshToken")
-    
+        console.log(user);
+       
         if (!user) {
             //neext_video :dsiscussion about frontend
            console.log( "Invalid Access Token")
         }
-       // console.log(decodedToken._id);
+      
         req.user = user;
         next()
     } catch (error) {

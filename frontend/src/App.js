@@ -22,11 +22,15 @@ getAllToDo(setToDo)
   return (
     <div className="App">
       <div className='container'>
+      <div>
+
+      </div>
             <h1>TO DO APP</h1>
             <div className='top'>
-              <input type='text' placeholder='Write the text' value={text} className='info' onChange={(e)=>setText(e.target.value)}/>
+              <input type='text' placeholder='Write the text'
+               value={text} className='info' onChange={(e)=>setText(e.target.value)}/>
               
-                            <div className='add'   onClick={()=>addToDo(text,setText,setToDo)} onChange={changeButtonName}>{btn}</div>
+       <div className='add'   onClick={()=>addToDo(text,setText,setToDo)} onChange={changeButtonName}>{btn}</div>
             </div>
 <div className='list'>
 {

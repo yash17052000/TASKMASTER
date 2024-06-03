@@ -1,7 +1,31 @@
 import axios from "axios";
 
 const baseUrl="http://localhost:5000"
-
+const register=(fullName,username,password)=>{
+    axios
+    .post(`${baseUrl}/register`,{fullName,username,password})
+    .then((data)=>{
+    
+    
+    }
+    )
+    .catch((err) => { console.log(err) })
+    console.log("User  resgitered suceesfuulyy");
+}
+const login=(username,password)=>{
+    axios
+    .post(`${baseUrl}/login`,{username,password})
+    .then((data)=>{
+    
+    
+    }
+    )
+    .catch((err) => { console.log(err) })
+    console.log("logeen  suceesfuulyy");
+}
+const logout=()=>{
+    axios.post(`${baseUrl}/logout`)
+}
 const getAllToDo=(setToDo)=>{
 axios
 .get(baseUrl)
@@ -76,4 +100,4 @@ alert("UPDATEd THE DATA")
     }
  
 
-export {getAllToDo,addToDo,deleteToDo,updateMode}
+export {getAllToDo,addToDo,deleteToDo,updateMode,register,login,logout}
